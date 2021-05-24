@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { editUpdates, setCurrent } from '../../actions/updateActions';
 import M from 'materialize-css/dist/js/materialize.min.js/';
 
-const EditUpdateModal = () => {
+const EditUpdateModal = ({ current, editUpdates }) => {
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
-    const [member, setMember] = useState('')
+    const [member, setMember] = useState('');
+
+    useEffect(() => {
+        if(current) {
+            setMessage(current.message);
+            setAttention(current.attention);
+            setMember(current.member);
+        }
+    }, [current]);
 
     const onSubmit = () => {
         if(message === '' || member === '') {
             M.toast({ html: 'Please enter an update and your name'})
         } else {
-            console.log(message, member, attention);
+            const editUpd = {
+                id: current.id,
+                message,
+                attention,
+                member,
+                date: new Date()
+            };
+
+            editUpdates(editUpd);
+            M.toast({ html: `Updated edited by ${member}`})
             // Clear Fields
             setMessage('');
             setMember('');
@@ -29,7 +49,6 @@ const EditUpdateModal = () => {
                         value={message}
                         onChange={e => setMessage(e.target.value)}
                         />
-                        <label htmlFor="message" className="active">Add Update</label>
                     </div>
                 </div>
 
@@ -43,9 +62,9 @@ const EditUpdateModal = () => {
                         <option value="" disabled>
                             Add your name
                         </option>
-                        <option value="Person 1">Person 1</option>
-                        <option value="Person 2">Person 2</option>
-                        <option value="Person 3">Person 3</option>
+                        <option value="Patricia Lebsack">Patricia Lebsack</option>
+                        <option value="Ervin Howell">Ervin Howell</option>
+                        <option value="Clementine Bauch">Clementine Bauch</option>
                         </select>
                     </div>
                 </div>
@@ -78,4 +97,13 @@ const modalStyle = {
     height: '75%'
 };
 
-export default EditUpdateModal;
+EditUpdateModal.propTypes = {
+    current: PropTypes.object,
+    editUpdates: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+    current: state.update.current
+});
+
+export default connect(mapStateToProps, { editUpdates })(EditUpdateModal);
