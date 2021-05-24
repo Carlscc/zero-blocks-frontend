@@ -31,7 +31,8 @@ const Updates = ({ update: { updates, loading }, getUpdates }) => {
 };
 
 Updates.propTypes = {
-    update: PropTypes.object.isRequired
+    update: PropTypes.object.isRequired,
+    getUpdates: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

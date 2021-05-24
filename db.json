@@ -1,49 +1,42 @@
 {
-    "updates": [
-      {
-        "message": "Removed redundant style from About page ",
-        "attention": false,
-        "member": "Ervin Howell",
-        "date": "2021-05-31T15:46:10.179Z",
-        "id": 1
-      },
-      {
-        "id": 2,
-        "message": "Added missing alt text to homepage images",
-        "attention": false,
-        "member": "Patricia Lebsack",
-        "date": "2021-05-31T16:18:04.245Z"
-      },
-      {
-        "message": "User authentication",
-        "attention": true,
-        "member": "Ervin Howell",
-        "date": "2021-05-31T15:46:48.690Z",
-        "id": 3
-      },
-      {
-        "id": 4,
-        "message": "Added components for new signup form",
-        "attention": false,
-        "member": "Clementine Bauch",
-        "date": "2021-05-31T19:57:35.544Z"
-      }
-    ],
-    "members": [
-      {
-        "id": 1,
-        "firstName": "Ervin",
-        "lastName": "Howell"
-      },
-      {
-        "id": 2,
-        "firstName": "Patricia",
-        "lastName": "Lebsack"
-      },
-      {
-        "id": 3,
-        "firstName": "Clementine",
-        "lastName": "Bauch"
-      }
-    ]
-  }
+  "updates": [
+    {
+      "message": "Added alt tags to new homepage images",
+      "attention": false,
+      "member": "Clementine Bauch",
+      "date": "2021-05-24T09:41:44.530Z",
+      "id": 1
+    },
+    {
+      "message": "Add client side error handling for new signup form",
+      "attention": true,
+      "member": "Patricia Lebsack",
+      "date": "2021-05-24T09:42:31.511Z",
+      "id": 2
+    },
+    {
+      "message": "Ran accessibility tests for new micro site",
+      "attention": false,
+      "member": "Ervin Howell",
+      "date": "2021-05-24T09:43:49.262Z",
+      "id": 3
+    }
+  ],
+  "members": [
+    {
+      "id": 1,
+      "firstName": "Ervin",
+      "lastName": "Howell"
+    },
+    {
+      "id": 2,
+      "firstName": "Patricia",
+      "lastName": "Lebsack"
+    },
+    {
+      "id": 3,
+      "firstName": "Clementine",
+      "lastName": "Bauch"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { GET_UPDATES, SET_LOADING, UPDATES_ERROR } from '../actions/types';
+import { GET_UPDATES, SET_LOADING, UPDATES_ERROR, ADD_UPDATE } from '../actions/types';
 
 const initialState = {
     updates: null,
@@ -13,6 +13,12 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 updates: action.payload,
+                loading: false
+            }
+        case ADD_UPDATE:
+            return {
+                ...state,
+                updates: [...state.updates, action.payload],
                 loading: false
             }
         case SET_LOADING:

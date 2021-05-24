@@ -1,9 +1,9 @@
 export const GET_UPDATES = 'GET_UPDATES';
-export const ADD_UPDATES = 'ADD_UPDATE';
+export const ADD_UPDATE = 'ADD_UPDATE';
 export const DELETE_UPDATE = 'DELETE_UPDATE';
 export const SET_CURRENT = 'SET_CURRENT';
 export const CLEAR_CURRENT = 'CLEAR_CURRENT';
-export const UPDATE_UPDATE = 'UPDATE_UPDATE';
+export const EDIT_UPDATE = 'EDIT_UPDATE';
 export const CLEAR_UPDATES = 'CLEAR_UPDATES';
 export const SET_LOADING = 'SET_LOADING';
 export const UPDATES_ERROR = 'UPDATES_ERROR';

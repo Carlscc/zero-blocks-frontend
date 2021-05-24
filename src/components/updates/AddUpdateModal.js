@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addUpdates } from '../../actions/updateActions';
 import M from 'materialize-css/dist/js/materialize.min.js/';
 
-const AddUpdateModal = () => {
+const AddUpdateModal = ({ addUpdates }) => {
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
-    const [member, setMember] = useState('')
+    const [member, setMember] = useState('');
 
     const onSubmit = () => {
         if(message === '' || member === '') {
             M.toast({ html: 'Please enter an update and your name'})
         } else {
-            console.log(message, member, attention);
+            const newUpdate = {
+                message,
+                attention,
+                member,
+                date: new Date()
+            };
+
+            addUpdates(newUpdate);
+
+            M.toast({ html: `Update added by ${member}` });
+
             // Clear Fields
             setMessage('');
             setMember('');
@@ -43,9 +56,9 @@ const AddUpdateModal = () => {
                         <option value="" disabled>
                             Add your name
                         </option>
-                        <option value="Person 1">Person 1</option>
-                        <option value="Person 2">Person 2</option>
-                        <option value="Person 3">Person 3</option>
+                        <option value="Patricia Lebsack">Patricia Lebsack</option>
+                        <option value="Ervin Howell">Ervin Howell</option>
+                        <option value="Clementine Bauch">Clementine Bauch</option>
                         </select>
                     </div>
                 </div>
@@ -73,9 +86,13 @@ const AddUpdateModal = () => {
     )
 }
 
+AddUpdateModal.propTypes = {
+    addUpdates: PropTypes.func.isRequired
+}
+
 const modalStyle = {
     width: '75%',
     height: '75%'
 };
 
-export default AddUpdateModal;
+export default connect(null, { addUpdates })(AddUpdateModal);
