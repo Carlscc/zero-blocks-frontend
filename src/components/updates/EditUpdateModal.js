@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js/';
 
-const AddActionModal = () => {
+const EditUpdateModal = () => {
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
     const [member, setMember] = useState('')
@@ -18,7 +18,7 @@ const AddActionModal = () => {
         }
     };
     return (
-        <div id="add-action-modal" className="modal" style={modalStyle}>
+        <div id="edit-update-modal" className="modal" style={modalStyle}>
             <div className="modal-content">
                 <h5>What did you work on since yesterday's standup?</h5>
                 <div className="row">
@@ -29,7 +29,7 @@ const AddActionModal = () => {
                         value={message}
                         onChange={e => setMessage(e.target.value)}
                         />
-                        <label htmlFor="message" className="active">Add action</label>
+                        <label htmlFor="message" className="active">Add Update</label>
                     </div>
                 </div>
 
@@ -78,4 +78,4 @@ const modalStyle = {
     height: '75%'
 };
 
-export default AddActionModal;
+export default EditUpdateModal;
