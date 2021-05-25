@@ -1,4 +1,14 @@
-import { GET_UPDATES, SET_LOADING, UPDATES_ERROR, ADD_UPDATE, DELETE_UPDATE, SET_CURRENT, CLEAR_CURRENT, EDIT_UPDATE } from './types';
+import {
+    GET_UPDATES,
+    SET_LOADING,
+    UPDATES_ERROR,
+    ADD_UPDATE,
+    DELETE_UPDATE,
+    SET_CURRENT,
+    CLEAR_CURRENT,
+    EDIT_UPDATE,
+    SEARCH_UPDATES
+ } from './types';
 
 // Get team updates from server
 export const getUpdates = () =>  async dispatch => {
@@ -109,6 +119,26 @@ export const editUpdates = update =>  async dispatch => {
             type: EDIT_UPDATE,
             payload: data
         });
+
+    } catch (err) {
+        dispatch({
+            type: UPDATES_ERROR,
+            payload: err.response.data
+        })
+    }
+}
+// Search team updates
+export const searchUpdates = (text) =>  async dispatch => {
+    try {
+        setLoading();
+
+        const res = await fetch(`/updates?q=${text}`);
+        const data = await res.json();
+
+        dispatch({
+            type: SEARCH_UPDATES,
+            payload: data
+        })
 
     } catch (err) {
         dispatch({

@@ -1,4 +1,14 @@
-import { GET_UPDATES, SET_LOADING, UPDATES_ERROR, ADD_UPDATE, EDIT_UPDATE, DELETE_UPDATE, SET_CURRENT, CLEAR_CURRENT } from '../actions/types';
+import {
+    GET_UPDATES,
+    SET_LOADING,
+    UPDATES_ERROR,
+    ADD_UPDATE,
+    EDIT_UPDATE,
+    SEARCH_UPDATES,
+    DELETE_UPDATE,
+    SET_CURRENT,
+    CLEAR_CURRENT
+} from '../actions/types';
 
 const initialState = {
     updates: null,
@@ -25,6 +35,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 updates: state.updates.map(update => update.id === action.payload.id ? action.payload : update )
+            }
+        case SEARCH_UPDATES:
+            return {
+                ...state,
+                updates: action.payload
             }
         case DELETE_UPDATE:
             return {
