@@ -32,7 +32,7 @@ const SearchBar = ({ searchUpdates }) => {
     )
 }
 
-SearchBar.prototypes = {
+SearchBar.protoTypes = {
     searchUpdates: PropTypes.func.isRequired
 }
 

@@ -24,39 +24,39 @@ export default (state = initialState, action) => {
                 ...state,
                 updates: action.payload,
                 loading: false
-            }
+            };
         case ADD_UPDATE:
             return {
                 ...state,
                 updates: [...state.updates, action.payload],
                 loading: false
-            }
+            };
         case EDIT_UPDATE:
             return {
                 ...state,
                 updates: state.updates.map(update => update.id === action.payload.id ? action.payload : update )
-            }
+            };
         case SEARCH_UPDATES:
             return {
                 ...state,
                 updates: action.payload
-            }
+            };
         case DELETE_UPDATE:
             return {
                 ...state,
                 updates: state.updates.filter(update => update.id !== action.payload),
                 loading: false
-            }
+            };
         case SET_CURRENT:
             return {
                 ...state,
                 current: action.payload
-            }
+            };
         case CLEAR_CURRENT:
             return {
                 ...state,
                 current: null
-            }
+            };
         case SET_LOADING:
             return {
                 ...state,
@@ -67,7 +67,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload
-            }
+            };
         default:
         return state;
     }

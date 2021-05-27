@@ -26,7 +26,7 @@ export const getUpdates = () =>  async dispatch => {
         } catch (err) {
             dispatch({
                 type: UPDATES_ERROR,
-                payload: err.response.data
+                payload: err.response.statusText
             })
         }
 }
@@ -60,7 +60,7 @@ export const addUpdates = update =>  async dispatch => {
     } catch (err) {
         dispatch({
             type: UPDATES_ERROR,
-            payload: err.response.data
+            payload: err.response.statusText
         })
     }
 }
@@ -97,7 +97,7 @@ export const deleteUpdates = id =>  async dispatch => {
     } catch (err) {
         dispatch({
             type: UPDATES_ERROR,
-            payload: err.response.data
+            payload: err.response.statusText
         })
     }
 }
@@ -123,7 +123,7 @@ export const editUpdates = update =>  async dispatch => {
     } catch (err) {
         dispatch({
             type: UPDATES_ERROR,
-            payload: err.response.data
+            payload: err.response.statusText
         })
     }
 }
@@ -143,7 +143,7 @@ export const searchUpdates = (text) =>  async dispatch => {
     } catch (err) {
         dispatch({
             type: UPDATES_ERROR,
-            payload: err.response.data
+            payload: err.response.statusText
         })
     }
 }

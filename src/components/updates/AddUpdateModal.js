@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addUpdates } from '../../actions/updateActions';
+import MemberSelect from '../members/MemberSelect';
 import M from 'materialize-css/dist/js/materialize.min.js/';
 
 const AddUpdateModal = ({ addUpdates }) => {
@@ -56,9 +57,7 @@ const AddUpdateModal = ({ addUpdates }) => {
                         <option value="" disabled>
                             Add your name
                         </option>
-                        <option value="Patricia Lebsack">Patricia Lebsack</option>
-                        <option value="Ervin Howell">Ervin Howell</option>
-                        <option value="Clementine Bauch">Clementine Bauch</option>
+                        <MemberSelect />
                         </select>
                     </div>
                 </div>

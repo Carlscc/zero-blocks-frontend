@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import MemberSelect from '../members/MemberSelect';
 import { editUpdates, setCurrent } from '../../actions/updateActions';
 import M from 'materialize-css/dist/js/materialize.min.js/';
 
@@ -62,9 +63,7 @@ const EditUpdateModal = ({ current, editUpdates }) => {
                         <option value="" disabled>
                             Add your name
                         </option>
-                        <option value="Patricia Lebsack">Patricia Lebsack</option>
-                        <option value="Ervin Howell">Ervin Howell</option>
-                        <option value="Clementine Bauch">Clementine Bauch</option>
+                        <MemberSelect />
                         </select>
                     </div>
                 </div>
