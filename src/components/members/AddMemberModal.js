@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addMember } from '../../actions/memberActions';
 import M from 'materialize-css/dist/js/materialize.min.js/';
 
-const AddMemberModal = () => {
+const AddMemberModal = ({ addMember }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('')
 
@@ -9,7 +12,13 @@ const AddMemberModal = () => {
         if(firstName === '' || lastName === '') {
             M.toast({ html: 'Please enter your first and last name'})
         } else {
-            console.log(firstName, lastName);
+            addMember({
+                firstName,
+                lastName
+            });
+
+            M.toast({ html: `${firstName} ${lastName} was added as a team member` });
+
             // Clear Fields
             setFirstName('');
             setLastName('');
@@ -46,7 +55,11 @@ const AddMemberModal = () => {
                 <a href="#!" onClick={onSubmit} className="modal-close waves-effect blue btn">Enter</a>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default AddMemberModal;
+AddMemberModal.propTypes = {
+    addMember: PropTypes.func.isRequired
+};
+
+export default connect(null, { addMember })(AddMemberModal);

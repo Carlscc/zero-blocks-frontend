@@ -1,13 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { deleteMember } from '../../actions/memberActions';
+import M from 'materialize-css/dist/js/materialize.min.js/';
 
-const MemberItemModal = ({ member }) => {
+const MemberItemModal = ({ member: { firstName, lastName, id }, deleteMember }) => {
+    const onDelete = () => {
+        deleteMember(id);
+        M.toast({ html: 'Team member deleted'})
+    };
+
     return (
         <div>
             <li className="collection-item">
                 <div>
-                    {member.firstName} {member.lastName}
-                    <a href="" className="secondary-content">
+                    {firstName} {lastName}
+                    <a href="" className="secondary-content" onClick={onDelete}>
                         <i className="material-icons grey-text">delete</i>
                     </a>
                 </div>
@@ -17,7 +25,8 @@ const MemberItemModal = ({ member }) => {
 }
 
 MemberItemModal.propTypes = {
-    member: PropTypes.object.isRequired
+    member: PropTypes.object.isRequired,
+    deleteMember: PropTypes.func.isRequired
 }
 
-export default MemberItemModal;
+export default connect(null, { deleteMember })(MemberItemModal);
