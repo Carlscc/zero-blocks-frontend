@@ -30,10 +30,10 @@ const SearchBar = ({ searchUpdates }) => {
             </nav>
         </div>
     )
-}
+};
 
 SearchBar.protoTypes = {
     searchUpdates: PropTypes.func.isRequired
-}
+};
 
 export default connect(null, { searchUpdates })(SearchBar);

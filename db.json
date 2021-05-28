@@ -1,13 +1,6 @@
 {
   "updates": [
     {
-      "message": "Added alt tags to new homepage images",
-      "attention": false,
-      "member": "Clementine Bauch",
-      "date": "2021-05-24T09:41:44.530Z",
-      "id": 1
-    },
-    {
       "id": 2,
       "message": "New signup form to be signed off",
       "attention": true,

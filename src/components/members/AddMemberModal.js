@@ -6,7 +6,7 @@ import M from 'materialize-css/dist/js/materialize.min.js/';
 
 const AddMemberModal = ({ addMember }) => {
     const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('')
+    const [lastName, setLastName] = useState('');
 
     const onSubmit = () => {
         if(firstName === '' || lastName === '') {
@@ -52,7 +52,7 @@ const AddMemberModal = ({ addMember }) => {
                 </div>
             </div>
             <div className="modal-footer">
-                <a href="#!" onClick={onSubmit} className="modal-close waves-effect blue btn">Enter</a>
+                <button type="button" onClick={onSubmit} className="modal-close waves-effect blue btn">Enter</button>
             </div>
         </div>
     );

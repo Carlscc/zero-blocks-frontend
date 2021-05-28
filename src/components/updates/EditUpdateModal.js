@@ -20,7 +20,7 @@ const EditUpdateModal = ({ current, editUpdates }) => {
 
     const onSubmit = () => {
         if(message === '' || member === '') {
-            M.toast({ html: 'Please enter an update and your name'})
+            M.toast({ html: 'Please enter your update and name'})
         } else {
             const editUpd = {
                 id: current.id,
@@ -31,7 +31,7 @@ const EditUpdateModal = ({ current, editUpdates }) => {
             };
 
             editUpdates(editUpd);
-            M.toast({ html: `Updated edited by ${member}`})
+            M.toast({ html: `This update was edited by ${member}`})
             // Clear Fields
             setMessage('');
             setMember('');
@@ -39,7 +39,7 @@ const EditUpdateModal = ({ current, editUpdates }) => {
         }
     };
     return (
-        <div id="edit-update-modal" className="modal" style={modalStyle}>
+        <div id="edit-update-modal" className="modal">
             <div className="modal-content">
                 <h5>What did you work on since yesterday's standup?</h5>
                 <div className="row">
@@ -85,15 +85,10 @@ const EditUpdateModal = ({ current, editUpdates }) => {
                 </div>
             </div>
             <div className="modal-footer">
-                <a href="#!" onClick={onSubmit} className="modal-close waves-effect blue btn">Enter</a>
+                <button type="button" onClick={onSubmit} className="modal-close waves-effect blue btn">Enter</button>
             </div>
         </div>
     )
-};
-
-const modalStyle = {
-    width: '75%',
-    height: '75%'
 };
 
 EditUpdateModal.propTypes = {

@@ -32,7 +32,7 @@ const AddUpdateModal = ({ addUpdates }) => {
         }
     };
     return (
-        <div id="add-update-modal" className="modal" style={modalStyle}>
+        <div id="add-update-modal" className="modal">
             <div className="modal-content">
                 <h5>What did you work on since yesterday's standup?</h5>
                 <div className="row">
@@ -79,7 +79,7 @@ const AddUpdateModal = ({ addUpdates }) => {
                 </div>
             </div>
             <div className="modal-footer">
-                <a href="#!" onClick={onSubmit} className="modal-close waves-effect blue btn">Enter</a>
+                <button type="button" onClick={onSubmit} className="modal-close waves-effect blue btn">Enter</button>
             </div>
         </div>
     )
@@ -87,11 +87,6 @@ const AddUpdateModal = ({ addUpdates }) => {
 
 AddUpdateModal.propTypes = {
     addUpdates: PropTypes.func.isRequired
-};
-
-const modalStyle = {
-    width: '75%',
-    height: '75%'
 };
 
 export default connect(null, { addUpdates })(AddUpdateModal);

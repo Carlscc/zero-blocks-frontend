@@ -15,18 +15,18 @@ const MemberItemModal = ({ member: { firstName, lastName, id }, deleteMember }) 
             <li className="collection-item">
                 <div>
                     {firstName} {lastName}
-                    <a href="" className="secondary-content" onClick={onDelete}>
+                    <a href="" aria-label="delete" className="secondary-content" onClick={onDelete}>
                         <i className="material-icons grey-text">delete</i>
                     </a>
                 </div>
             </li>
         </div>
     )
-}
+};
 
 MemberItemModal.propTypes = {
     member: PropTypes.object.isRequired,
     deleteMember: PropTypes.func.isRequired
-}
+};
 
 export default connect(null, { deleteMember })(MemberItemModal);

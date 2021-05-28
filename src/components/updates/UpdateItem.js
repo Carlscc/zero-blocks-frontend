@@ -28,7 +28,7 @@ const UpdateItem = ({ update, deleteUpdates, setCurrent }) => {
             <span className='grey-text'>
                 <span className='black-text'>ID #{update.id}</span> last updated by <span
                  className='black-text'>{update.member}</span> on <Moment format='MMMM Do YYYY, h:mm:ss a'>{update.date}</Moment>
-                 <a href='#!' className='secondary-content' onClick={onDelete}>
+                 <a href='#!' aria-label="delete" className='secondary-content' onClick={onDelete}>
                      <i className='material-icons grey-text'>delete</i>
                  </a>
             </span>

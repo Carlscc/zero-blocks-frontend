@@ -14,12 +14,12 @@ const Updates = ({ update: { updates, loading }, getUpdates }) => {
 
     if(loading || updates === null) {
         return <Preloader/>
-    };
+    }
 
     return (
         <ul className='collection with-header'>
             <li className='collection-header'>
-                <h4 className='center'>ZeroBlocks - Daily Tracker</h4>
+                <h4 className='center'>ZeroBlocks - Daily Tracker<span role="img" aria-label="rocket"> 🚀</span></h4>
             </li>
             {!loading && updates.length === 0 ? (
             <p className='center'>No updates to show...</p>
