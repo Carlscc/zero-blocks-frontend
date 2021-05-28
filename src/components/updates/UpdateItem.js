@@ -35,12 +35,12 @@ const UpdateItem = ({ update, deleteUpdates, setCurrent }) => {
             </div>
         </li>
     )
-}
+};
 
 UpdateItem.propTypes = {
     update: PropTypes.object.isRequired,
     deleteUpdates: PropTypes.func.isRequired,
     setCurrent: PropTypes.func.isRequired
-}
+};
 
 export default connect(null, { deleteUpdates, setCurrent })(UpdateItem);

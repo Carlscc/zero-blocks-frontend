@@ -21,22 +21,22 @@ export const getUpdates = () =>  async dispatch => {
             dispatch({
                 type: GET_UPDATES,
                 payload: data
-            })
+            });
 
         } catch (err) {
             dispatch({
                 type: UPDATES_ERROR,
                 payload: err.response.statusText
-            })
+            });
         }
-}
+};
 
 // Set loading to true
 export const setLoading = () => {
     return {
         type: SET_LOADING
     }
-}
+};
 
 // Add team updates
 export const addUpdates = update =>  async dispatch => {
@@ -55,15 +55,15 @@ export const addUpdates = update =>  async dispatch => {
         dispatch({
             type: ADD_UPDATE,
             payload: data
-        })
+        });
 
     } catch (err) {
         dispatch({
             type: UPDATES_ERROR,
             payload: err.response.statusText
-        })
+        });
     }
-}
+};
 
 // Set current update
 export const setCurrent = update => {
@@ -71,16 +71,16 @@ export const setCurrent = update => {
         type: SET_CURRENT,
         payload: update
     }
-}
+};
 
 // Clear current update
 export const clearCurrent = () => {
     return {
         type: CLEAR_CURRENT
     }
-}
+};
 
-// Delete update from server
+// Delete updates from server
 export const deleteUpdates = id =>  async dispatch => {
     try {
         setLoading();
@@ -98,10 +98,11 @@ export const deleteUpdates = id =>  async dispatch => {
         dispatch({
             type: UPDATES_ERROR,
             payload: err.response.statusText
-        })
+        });
     }
-}
-// Edit team update
+};
+
+// Edit team updates
 export const editUpdates = update =>  async dispatch => {
     try {
         setLoading();
@@ -124,9 +125,10 @@ export const editUpdates = update =>  async dispatch => {
         dispatch({
             type: UPDATES_ERROR,
             payload: err.response.statusText
-        })
+        });
     }
-}
+};
+
 // Search team updates
 export const searchUpdates = (text) =>  async dispatch => {
     try {
@@ -138,12 +140,12 @@ export const searchUpdates = (text) =>  async dispatch => {
         dispatch({
             type: SEARCH_UPDATES,
             payload: data
-        })
+        });
 
     } catch (err) {
         dispatch({
             type: UPDATES_ERROR,
             payload: err.response.statusText
-        })
+        });
     }
-}
+};

@@ -23,10 +23,10 @@ const MemberSelect = ({ getMembers, member: { members, loading } }) => {
 MemberSelect.propTypes = {
     member: PropTypes.object.isRequired,
     getMembers: PropTypes.func.isRequired
-}
+};
 
 const mapStateToProps = state => ({
     member: state.member
-})
+});
 
 export default connect(mapStateToProps, { getMembers })(MemberSelect);

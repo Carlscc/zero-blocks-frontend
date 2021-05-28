@@ -27,7 +27,7 @@ const MemberListModal = ({ getMembers, member: { members, loading } }) => {
 MemberListModal.propTypes = {
     member: PropTypes.object.isRequired,
     getMembers: PropTypes.func.isRequired
-}
+};
 
 const mapStateToProps = state => ({
     member: state.member

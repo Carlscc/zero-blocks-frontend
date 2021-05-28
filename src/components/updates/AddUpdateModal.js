@@ -83,11 +83,11 @@ const AddUpdateModal = ({ addUpdates }) => {
             </div>
         </div>
     )
-}
+};
 
 AddUpdateModal.propTypes = {
     addUpdates: PropTypes.func.isRequired
-}
+};
 
 const modalStyle = {
     width: '75%',

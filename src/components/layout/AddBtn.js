@@ -20,6 +20,6 @@ const AddBtn = () => {
             </ul>
         </div>
     )
-}
+};
 
 export default AddBtn;

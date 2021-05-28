@@ -10,7 +10,7 @@ const initialState = {
     members: null,
     loading: false,
     error: null
-}
+};
 
 export default (state = initialState, action) => {
     switch(action.type) {
@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
                 ...state,
                 members: state.member.filter(member => member.id !== action.payload),
                 loading: false
-            }
+            };
         case SET_LOADING:
             return {
                 ...state,
@@ -43,7 +43,7 @@ export default (state = initialState, action) => {
                 ...state,
                 error: action.payload,
                 loading: false
-            }
+            };
         default:
             return state
     }

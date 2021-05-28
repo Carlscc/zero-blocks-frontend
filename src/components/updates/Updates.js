@@ -14,7 +14,7 @@ const Updates = ({ update: { updates, loading }, getUpdates }) => {
 
     if(loading || updates === null) {
         return <Preloader/>
-    }
+    };
 
     return (
         <ul className='collection with-header'>

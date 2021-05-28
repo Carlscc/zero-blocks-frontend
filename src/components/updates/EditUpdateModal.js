@@ -89,7 +89,7 @@ const EditUpdateModal = ({ current, editUpdates }) => {
             </div>
         </div>
     )
-}
+};
 
 const modalStyle = {
     width: '75%',
