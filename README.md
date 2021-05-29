@@ -1,5 +1,6 @@
 <h1 align=center>ZeroBlocks - A Daily Tracker For Team Updates/Tasks</h1>
 
+![Screenshot 2021-05-29 at 13 22 44](https://user-images.githubusercontent.com/38971399/120070052-001ac280-c081-11eb-9db9-8c824ae9a606.png)
 
 🏗  Build using:
 
