@@ -3,7 +3,7 @@ import React from 'react';
 const AddBtn = () => {
     return (
         <div className="fixed-action-btn">
-            <a href="#add-update-modal" className="btn-floating btn-large blue darken-2 pulse modal-trigger">
+            <a href="#add-update-modal" className="btn-floating btn-large purple darken-2 pulse modal-trigger">
                 <i className="large material-icons">add</i>
             </a>
             <ul>
@@ -13,7 +13,7 @@ const AddBtn = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="#add-member-modal" className="btn-floating red modal-trigger">
+                    <a href="#add-member-modal" className="btn-floating blue modal-trigger">
                         <i className="material-icons">person_add</i>
                     </a>
                 </li>

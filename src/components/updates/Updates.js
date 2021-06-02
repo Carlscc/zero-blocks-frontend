@@ -19,7 +19,7 @@ const Updates = ({ update: { updates, loading }, getUpdates }) => {
     return (
         <ul className='collection with-header'>
             <li className='collection-header'>
-                <h4 className='center'>ZeroBlocks - Daily Tracker<span role="img" aria-label="rocket"> 🚀</span></h4>
+                <h4 className='center'>Team Updates<span role="img" aria-label="purple alien monster emoji"> 👾</span></h4>
             </li>
             {!loading && updates.length === 0 ? (
             <p className='center'>No updates to show...</p>

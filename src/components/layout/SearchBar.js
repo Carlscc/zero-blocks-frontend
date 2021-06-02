@@ -12,10 +12,11 @@ const SearchBar = ({ searchUpdates }) => {
 
     return (
         <div>
-            <nav style={{ marginBottom: '30px'}} className='blue'>
+            <nav style={{ marginBottom: '30px' }} className='purple' >
                 <div className="nav-wrapper">
+                <a href="#" class="brand-logo left" style={{ paddingLeft: '15px'}}>ZeroBlocks</a>
                 <form>
-                    <div className="input-field">
+                    <div className="input-field right">
                     <input
                         id="search"
                         type="search"
